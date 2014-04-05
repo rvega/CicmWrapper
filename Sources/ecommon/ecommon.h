@@ -76,6 +76,22 @@
 #define layer_getname(layer) layer.c_name->s_name
 #define layer_getsize(layer) layer.c_atom.size()
 
+//rvega.
+// The t_blob type is supposed to be defined in m_pd.h
+// but it's not there in lib pd's code.
+// Here it goes:
+#define PD_BLOBS 1 /* MP20070211 Use this to test for blob capability */
+/* MP20061223 blob type: */
+typedef struct _blob /* pointer to a blob */
+{
+    unsigned long s_length; /* length of blob in bytes */
+    unsigned char *s_data; /* pointer to 1st byte of blob */
+} t_blob;
+/* ...MP20061223 blob type */ 
+
+
+
+
 EXTERN void canvas_displaceselection(t_canvas *x, int dx, int dy);
 
 typedef void        (*method)(void* x, ...);

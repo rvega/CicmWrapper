@@ -106,11 +106,12 @@ void ewidget_displace(t_gobj *z, t_glist *glist, int dx, int dy)
     ebox_move(x, glist);
 
 #ifdef _WINDOWS
-	if(!x->e_selected)
-	{
-		m = getfn((t_pd *)x->e_canvas, gensym("setbounds"));
-		m(x->e_canvas, glist->gl_screenx1, glist->gl_screeny1, glist->gl_screenx2, glist->gl_screeny2);
-	}
+	// rvega.
+    //if(!x->e_selected)
+	//{
+		//m = getfn((t_pd *)x->e_canvas, gensym("setbounds"));
+		//m(x->e_canvas, glist->gl_screenx1, glist->gl_screeny1, glist->gl_screenx2, glist->gl_screeny2);
+	//}
 #endif
 }
 
